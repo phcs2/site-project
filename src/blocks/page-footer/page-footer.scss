@@ -53,14 +53,14 @@
   }
 
   &__soc-icon {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 10px;
     margin-bottom: 10px;
     width: 55px;
     height: 55px;
-    background: url('../img/soc-icons.png') no-repeat 0 50% $darkest-grey;
-    background-size: 140px auto;
-    border: 10px solid $darkest-grey;
+    background-color: $darkest-grey;
     border-radius: 50%;
     transition: opacity 0.3s;
 
@@ -68,16 +68,9 @@
       opacity: 0.7;
     }
 
-    &--gp {
-      background-position: -35px 50%;
-    }
-
-    &--tw {
-      background-position: -70px 50%;
-    }
-
-    &--in {
-      background-position: -105px 50%;
+    svg {
+      fill: $white;
+      stroke: none;
     }
   }
 
