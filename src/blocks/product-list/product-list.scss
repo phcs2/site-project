@@ -1,0 +1,285 @@
+body.js-filter-open {
+  overflow: hidden;
+
+  @media (min-width: $screen-lg) {
+    overflow: auto;
+  }
+
+}
+
+.product-list {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.product-list__content {
+  display: flex;
+  @include container();
+}
+
+.product-list__items {
+  @include row();
+}
+
+.product-list__filters {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding: 0 12px;
+
+  .field-select {
+    display: flex;
+    align-items: center;
+    margin: 10px 5px 10px 0;
+
+
+    &__name {
+      margin-right: 10px;
+    }
+
+    &__select {
+      margin-right: 20px;
+      width: 180px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    &--sort{
+      flex-basis: 100%;
+
+      @media(min-width: $screen-md) {
+        flex-basis: 280px;
+      }
+    }
+
+    &--view-count{
+      flex-grow: 1;
+
+      @media(min-width: $screen-xl) {
+        flex-grow: 0;
+      }
+
+      .field-select__select {
+        width: 80px;
+      }
+    }
+  }
+
+.product-list__filters-text {
+  flex-basis: 100%;
+  order: 1;
+  margin: 15px 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: $grey;
+
+  @media (min-width: $screen-xl) {
+    flex-basis: 0;
+    flex-grow: 1;
+    order: 0;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+  label[for="tiles-view"],
+  label[for="table-view"] {
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+#tiles-view,
+#table-view {
+  display: none;
+}
+
+#tiles-view:not(:checked) ~ .product-list__filters label[for="tiles-view"] svg,
+#table-view:not(:checked) ~ .product-list__filters label[for="table-view"] svg{
+  stroke: $grey;
+}
+
+#table-view:checked ~ .item {
+  display: flex;
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+
+  & > a {
+    flex-basis: 40%;
+
+    @media (min-width: $screen-md) {
+      flex-basis: 20%;
+    }
+  }
+
+  .item__inner {
+    flex-basis: 60%;
+    padding: 0 12px;
+
+    @media (min-width: $screen-md) {
+      flex-basis: 80%;
+    }
+
+    * {
+      text-align: left;
+    }
+
+    .item__title {
+      margin-top: 0;
+    }
+
+    .item__desc {
+      @media(min-width: $screen-md) {
+        display: block;
+      }
+    }
+  }
+
+  .item__price {
+    margin-bottom: 0;
+  }
+}
+
+.product-list__sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 3;
+  min-width: 300px;
+  width: 300px;
+  background-color: $lighter-grey;
+  transform: translateX(-300px);
+  transition: transform 0.7s;
+
+  @media (min-width: $screen-lg) {
+    position: static;
+    height: auto;
+    transform: translateX(0px);
+  }
+
+  &.js-filter-open {
+    transform: translateX(0px);
+  }
+}
+
+.product-list__sidebar-section {
+  margin: 30px;
+
+  h4 {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+  }
+
+  a {
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: $grey;
+  }
+
+  span {
+    color: $color-main;
+    margin-left: 5px;
+  }
+}
+
+a.product-list__sidebar-color {
+  position: relative;
+  padding-left: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $grey;
+    border-radius: 50%;
+  }
+
+  &:nth-of-type(1)::before {
+    background-color: $brown;
+  }
+
+  &:nth-of-type(2)::before {
+    background-color: $grey;
+  }
+
+  &:nth-of-type(3)::before {
+    background-color: $white;
+  }
+
+  &:nth-of-type(4)::before {
+    background-color: $black;
+  }
+}
+
+.product-list__sidebar-bgr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+
+  @media (min-width: $screen-lg) {
+    height: 0;
+  }
+
+  .product-list__sidebar.js-filter-open ~ & {
+      display: block;
+    }
+}
+
+.product-list__sidebar-btn {
+  position: fixed;
+  top: calc(50% + 60px);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  z-index: 2;
+  overflow: hidden;
+  color: $white;
+  text-align: center;
+  line-height: 36px;
+  background-color: $color-main;
+  transform-origin: 0 0;
+  transform: rotate(-90deg);
+  transition: transform 0.7s;
+  cursor: pointer;
+
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
+
+  .product-list__sidebar.js-filter-open ~ & {
+    transform: translateX(300px) rotate(-90deg);
+  }
+
+  svg {
+    margin-right: 5px;
+    stroke: $white;
+  }
+}
+
+
+
+
+

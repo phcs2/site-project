@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (field)
+
+mixin field-textarea(name, placeholder, id, labelName, mods)
+
+  //- name - ОБЯЗАТЕЛЬНОЕ поле
+  //- placeholder - ОБЯЗАТЕЛЬНОЕ поле
+  //- id - если есть, то при клике на label фокус на поле
+  //- labelName - если есть, то добавляется label
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' field--' + modsList[i].trim();
+      }
+    }
+
+
+  if (typeof(labelName) !== 'undefined' && labelName)
+    if (typeof(id) !== 'undefined' && id)
+      label.field-textarea(for= id class=allMods)&attributes(attributes)!= labelName
+      textarea.field-textarea(id= id name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+    else
+      label.field-textarea!= labelName
+      textarea.field-textarea(name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+  else
+    textarea.field-textarea(name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+

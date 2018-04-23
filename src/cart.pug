@@ -1,0 +1,15 @@
+extends pug/layout.pug
+
+block meta
+  title Корзина
+  meta(name='description', content='Корзина')
+
+
+block header
+  +page-header()
+
+block content
+  +cart()
+
+block footer
+  +page-footer()

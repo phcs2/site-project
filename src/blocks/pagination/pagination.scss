@@ -1,0 +1,20 @@
+.pagination {
+
+  * {
+    font-size: 14px;
+    padding: 14px;
+  }
+  
+  span,
+  &__item--active {
+    color: $grey;
+  }
+
+  a {
+    font-weight: bold;
+  }
+
+  .btn {
+    margin-left: 10px;
+  }
+}

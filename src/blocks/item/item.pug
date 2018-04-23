@@ -1,0 +1,29 @@
+mixin item(title, price, href, img, summary, desc, mods)
+
+  //- title {string} - название
+  //- price {string} - цена
+  //- href {string} - ссылка
+  //- img {string} - фото
+  //- summary {string} - краткое описание
+  //- desc {string} - описание
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' item--' + modsList[i].trim();
+      }
+    }
+
+  .item(class=allMods)
+    a(href= href)
+      img(src='img/' + img)
+    .item__inner
+      h4.item__title
+        a(href= href)= title
+      if(typeof(summary) !== 'undefined' && summary)
+        p.item__summary= summary
+      if(typeof(desc) !== 'undefined' && desc)
+        p.item__desc= desc
+      p.item__price= price + ' ₽'

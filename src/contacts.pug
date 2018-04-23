@@ -1,0 +1,19 @@
+extends pug/layout.pug
+
+block meta
+  title Контакты
+  meta(name='description', content='Контакты')
+
+
+block header
+  +page-header()
+
+block content
+  +contacts()
+
+block footer
+  +page-footer()
+
+block prepend page-bottom
+  script(src='js/map-settings.js')
+  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCRBPiKx1WgnAgU8EeBl3i67-x5B-X-ar4&callback=initMap' async defer)

@@ -1,0 +1,75 @@
+$container-xs:                100% - 24;
+$container-sm:                426px;
+$container-md:                716px;
+$container-lg:                910px;
+$container-xl:                968px;
+$container-xxl:               968px;
+$grid-gutter-width:           24px;
+
+.contacts {
+  &__top {
+    @include container();
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  &__map {
+    height: 400px;
+    background-color: $grey;
+  }
+
+  &__bottom {
+    @include container();
+  }
+
+  &__bottom-header {
+    font-size: 30px;
+    line-height: 52px;
+    margin-bottom: 8px;
+  }
+
+  &__bottom-text {
+    line-height: 25px;
+
+    span {
+      margin-left: 5px;
+      color: $color-main;
+    }
+  }
+
+  &__form {
+    @include row(24, 24, 0, 0, 0, 0);
+    margin-bottom: 20px;
+    font-size: 14px;
+
+    label {
+      @include col(xs, 1, 1, 0);
+      @include col(md, 1, 8, 24);
+      margin-top: 22px;
+    }
+
+    label span {
+      margin-left: 5px;
+      color: $color-main;
+    }
+
+    input,
+    textarea {
+      @include col();
+      @include col(md, 7, 8);
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .btn {
+      flex-basis: 0;
+      margin: 10px auto 40px;
+    }
+  }
+}

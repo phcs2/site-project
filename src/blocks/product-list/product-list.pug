@@ -1,0 +1,112 @@
+mixin product-list()
+  main.product-list
+    section.product-list__content
+      +breadcrumbs()
+        +breadcrumbs-item('Каталог', '#')
+        +breadcrumbs-item('Стулья')
+      h1 Стулья
+      .product-list__items
+        input#tiles-view(type="radio" name="items-view" checked)
+        input#table-view(type="radio" name="items-view")
+        .product-list__filters
+          +field-select(
+            'Сортировка:',
+            {
+              name: 'select',
+              id: 'select'
+            },
+            [
+              {
+                title: 'сначала дешевые',
+                attrs: {
+                  value: '',
+                }
+              },
+              {
+                title: 'сначала дорогие',
+                attrs: {
+                  value: '',
+                }
+              },
+              {
+                title: 'по популярности',
+                attrs: {
+                  value: '',
+                }
+              },
+            ],
+            '',
+            'sort'
+          )
+          .product-list__filters-text Показаны 1–6 из 23 товаров
+          +field-select(
+            'Показать по:',
+            {
+              name: 'view-count',
+              id: 'view-count'
+            },
+            [
+              {
+                title: '6',
+                attrs: {
+                  value: '',
+                }
+              },
+              {
+                title: '10',
+                attrs: {
+                  value: '',
+                }
+              },
+              {
+                title: '20',
+                attrs: {
+                  value: '',
+                }
+              },
+            ],
+            '',
+            'view-count'
+          )
+          label(for="tiles-view")
+            svg(width='24' height='30')
+              use(xlink:href="img/sprite-svg.svg#grid")
+          label(for="table-view")
+            svg(width='30' height='30')
+              use(xlink:href="img/sprite-svg.svg#list")
+        +item('Тобиас', '4800', 'single-product.html', 'tobias.jpg', 'Стул, серый, хромированный', 'Эргономичная форма сиденья и спинки обеспечивает максимальный комфорт.')
+        +item('Куллаберг', '4000', 'single-product.html', 'kullaberg.jpg', 'Рабочий стул, сосна, черный', 'Источником вдохновения для разработки дизайна этого стула стал индустриальный стиль первой половины прошлого века, который мы дополнили самыми современными функциями.')
+        +item('Одгер', '5000', 'single-product.html', 'odger.jpg', 'Стул, белый, бежевый', 'Удобно сидеть благодаря эргономичной форме сиденья и закругленной форме спинки.')
+        +item('Бернгард', '8500', 'single-product.html', 'berngard.jpg', 'Стул, хромированный, оранжевый', 'Слегка пружинящее сиденье обеспечивает оптимальный комфорт. Сиденье с набивкой обеспечивает максимальный комфорт.')
+        +item('Свен-Бертиль', '3400', 'single-product.html', 'sven-bertil.jpg', 'Стул, черный', 'Эргономичная форма спинки и сиденья обеспечивает оптимальный комфорт.')
+        +item('Харри', '4500', 'single-product.html', 'harri.jpg', 'Стул, береза, белый', 'Съемный чехол можно стирать в машине. Высокая спинка и сиденье с наполнителем из полиэстерной ваты обеспечивают максимальный комфорт.')
+      +pagination()
+        +pagination-item('1', '#', true)
+        +pagination-item('2', '#')
+        +pagination-item('3', '#')
+    aside.product-list__sidebar
+      section.product-list__sidebar-section
+        h4 Категории
+        a(href='#') Стулья
+          span 28
+        a(href='#') Столы
+          span 46
+        a(href='#') Диваны
+          span 32
+        a(href='#') Стенки
+          span 24
+      section.product-list__sidebar-section
+        h4 Цвет
+        a.product-list__sidebar-color(href='#') Коричневый
+          span 25
+        a.product-list__sidebar-color(href='#') Серый
+          span 7
+        a.product-list__sidebar-color(href='#') Белый
+          span 1
+        a.product-list__sidebar-color(href='#') Черный
+          span 4
+    .product-list__sidebar-bgr
+    .product-list__sidebar-btn
+      svg(width='16' height='16')
+        use(xlink:href="img/sprite-svg.svg#filter")
+      | Filter

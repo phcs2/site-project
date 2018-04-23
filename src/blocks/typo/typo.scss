@@ -1,0 +1,54 @@
+// Этот блок ответственен ТОЛЬКО за типографику проекта.
+// Не пишите тут какую-либо стороннюю стилизацию.
+
+$font-family:                   'Fira Sans', 'Arial', Helvetica, sans-serif;
+$font-size:                     16px;
+$line-height:                   1.75 !default;
+$text-color:                    #333333;
+$grey:                          #777777;
+
+body {
+  // ТОЛЬКО типографика!
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $text-color;
+}
+
+.h1,
+h1 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 60px;
+}
+
+p {
+  margin-bottom: 40px;
+  color: $grey;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+}

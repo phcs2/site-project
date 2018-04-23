@@ -1,0 +1,24 @@
+mixin btn(text, href, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+        href    {string} - ссылка
+        mods    {string} - список модификаторов
+        Вызов:
+          +btn('Текст', '#', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' btn--' + modsList[i].trim();
+      }
+    }
+
+  .btn(class=allMods)
+    if (typeof(href) !== 'undefined' && href)
+      a.btn__inner(href= href)!= text
+    else
+      span.btn__inner!= text

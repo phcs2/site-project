@@ -1,0 +1,19 @@
+extends pug/layout.pug
+
+block meta
+  title Product
+  meta(name='description', content='Product')
+  link(rel='stylesheet' href='css/swiper.min.css')
+
+
+block header
+  +page-header()
+
+block content
+  +product()
+  
+block footer
+  +page-footer()
+
+block prepend page-bottom
+  script(src='js/swiper.min.js')

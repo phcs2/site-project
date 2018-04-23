@@ -1,0 +1,31 @@
+$line-height:                 1.5 !default;
+
+textarea.field-textarea {
+  vertical-align: middle;
+  width: 100%;
+  line-height: $line-height;
+  margin-top: 10px;
+  padding: 11px 30px 11px 20px;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: bold;
+  color: $grey;
+  border: 1px solid $lighter-grey;
+  border-radius: 0;
+  background-color: $lighter-grey;
+
+  &:active,
+  &:focus {
+    background-color: $white;
+    border: 1px solid $color-main;
+    outline: none;
+  }
+  &--white input{
+    background-color: $white;
+  }
+}
+
+label.field-textarea {
+  font-weight: bold;
+}
+

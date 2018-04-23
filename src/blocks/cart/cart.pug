@@ -1,0 +1,46 @@
+mixin cart()
+
+  main.cart
+    +breadcrumbs()
+      +breadcrumbs-item('Корзина')
+    h1.cart__header Корзина
+    section.cart__table
+      .cart__caption-row
+        .cart__caption-cell Товар
+        .cart__caption-cell Цена
+        .cart__caption-cell Количество
+        .cart__caption-cell Стоимость
+      .cart__product
+        +icon-btn('icon-delete', 'trash')
+        a.cart__product-link(href='single-product.html')
+          img(src='img/tobias.jpg')
+        .cart__product-desc
+          h4.cart__product-desc-header
+            a(href='single-product.html') Тобиас
+          p.cart__product-desc-text Стул, серый, хромированный
+          p.cart__product-desc-text Эргономичная форма сиденья и спинки обеспечивает максимальный комфорт.
+
+        .cart__product-price 4800 ₽
+        .cart__product-quantity
+          input(type='number' value='2' min='1' max='10' step='1')
+        .cart__product-total 9600 ₽
+      .cart__product
+        +icon-btn('icon-delete', 'trash')
+        a.cart__product-link(href='single-product.html')
+          img(src='img/kullaberg.jpg')
+        .cart__product-desc
+          h4.cart__product-desc-header
+            a(href='single-product.html') Куллаберг
+          p.cart__product-desc-text Рабочий стул, сосна, черный
+          p.cart__product-desc-text Источником вдохновения для разработки дизайна этого стула стал индустриальный стиль первой половины прошлого века, который мы дополнили самыми современными функциями.
+        .cart__product-price 4000 ₽
+        .cart__product-quantity
+          input(type='number' value='2' min='1' max='10' step='1')
+        .cart__product-total 8000 ₽
+    section.cart__total
+      p.cart__total-text Итого:
+        span 17600 ₽
+      +btn('Перейти к оформлению', '', 'color2')
+    section.cart__coupone
+      +field('coupone', 'Coupone code:', 'Code')
+      +btn('Apply', '', 'small')

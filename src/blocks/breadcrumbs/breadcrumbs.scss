@@ -1,0 +1,41 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 50px 0 0 0;
+  width: 100%;
+}
+
+.breadcrumbs__item {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  color: $black;
+
+  &:first-of-type a {
+    display: block;
+    width: 14px;
+    height: 21px;
+
+    svg {
+      stroke: $grey;
+    }
+  }
+
+  &:not(:first-of-type) {
+    margin-left: 16px;
+  }
+    
+  &:not(:first-of-type)::before {
+    position: relative;
+    left: -8px;
+    top: -1px;
+    content: "|";
+    color: $grey;
+  }
+
+  a {
+    color: $grey;
+  }
+}
+

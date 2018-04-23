@@ -1,0 +1,48 @@
+mixin breadcrumbs(mods)
+
+  //- Ссылка на главную УЖЕ ВКЛЮЧЕНА!!!
+  //- Вызов:
+  //-       +breadcrumbs()
+  //-         +breadcrumbs-item('Услуги', '/services')
+  //-         +breadcrumbs-item('Замеры')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' breadcrumbs--' + modsList[i].trim();
+      }
+    }
+
+  ul.breadcrumbs(class=allMods, aria-label='Breadcrumb', role='navigation')&attributes(attributes)
+    li.breadcrumbs__item
+      a(href="/")
+        svg(width='14' height='21')
+          use(xlink:href="img/sprite-svg.svg#home")
+    block
+
+
+
+mixin breadcrumbs-item(text, href, mods)
+
+  //- Принимает:
+  //-   text   {string} - содержимое пункта
+  //-   href   {string} - ссылка этого пункта (если пустая, то это не ссылка, а span)
+  //-   mods   {string} - список модификаторов
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' breadcrumbs--' + modsList[i].trim();
+      }
+    }
+
+  li.breadcrumbs__item(class=allMods)&attributes(attributes)
+    if(typeof(href) !== 'undefined' && href)
+      a(href=href)!= text
+    else
+      span!= text

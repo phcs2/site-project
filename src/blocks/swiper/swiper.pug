@@ -1,0 +1,30 @@
+mixin swiper(imgs)
+
+  //- Принимает:
+  //-   imgs    {array} - массив адресов изображений
+  //- Вызов:
+        +swiper(
+          [
+            '../img/1.jpg',
+            '../img/2.jpg',
+            '../img/3.jpg'
+          ]
+        )
+
+  .swiper-container
+    .swiper-wrapper
+      each img in imgs
+        .swiper-slide
+          div(style='background-image: url(' + img + ')')
+    .swiper-pagination
+    .swiper-button-next
+      svg(width='44' height='44')
+        use(xlink:href="img/sprite-svg.svg#chevron-right")
+    .swiper-button-prev
+      svg(width='44' height='44')
+        use(xlink:href="img/sprite-svg.svg#chevron-left")
+    .swiper-resize-btn
+      svg(width='20' height='20')
+          use(xlink:href="img/sprite-svg.svg#maximize")
+      svg(width='30' height='30')
+          use(xlink:href="img/sprite-svg.svg#close")

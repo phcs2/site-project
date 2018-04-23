@@ -1,0 +1,47 @@
+@mixin btn-color($color) {
+  padding: 0;
+  background-color: $color;
+  border: 2px solid $color;
+
+  &:hover {
+    color: $color;
+    background-color: $white;
+
+    a,
+    span {
+      color: $color;
+    }
+  }
+}
+
+.btn {
+  @include btn-color($color-main);
+  display: inline-block;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: color 0.7s, background-color 0.7s;
+
+  &__inner {
+    display: block;
+    padding: 0 26px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    color: $white;
+    transition: color 0.7s;
+  }
+
+  &--small {
+    height: 45px;
+
+    .btn__inner {
+      line-height: 41px;
+    }
+  }
+
+  &--color2 {
+    @include btn-color($color2);
+  }
+}
+

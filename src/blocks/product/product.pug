@@ -1,0 +1,38 @@
+mixin product()
+
+  main.product
+    +breadcrumbs()
+      +breadcrumbs-item('Каталог', '#')
+      +breadcrumbs-item('Стулья', 'catalogue.html')
+      +breadcrumbs-item('Тобиас')
+    .product__container
+      .product__images-container
+        +swiper(
+          ['img/tobias-big.jpg',
+           'img/tobias1.jpg',
+           'img/tobias2.jpg',
+           'img/tobias3.jpg'
+          ])
+      section.product__content
+        h1 Тобиас
+        p.product__summary Стул, серый, хромированный
+        p.product__price 4800 ₽
+        p.product__details Эргономичная форма сиденья и спинки обеспечивает максимальный комфорт.
+        ul.product__list
+          li Каркас ножек: Сталь, Хромирование
+          li Материал сиденья: Поликарбонат
+          li Ножка: Полипропилен
+          li Гайка: Цинк, Хромирование
+          li Амортизаторы/ Шайбы: Синтетический каучук
+          li Протестировано для: 110 кг
+          li Размеры (Ш х Г х В): 55 x 56 x 82 см
+          li Размеры сиденья (Ш х Г х В): 48 х 46 х 44 см
+        form.product__add(action="#")
+          input(type='number' value='1' min='1' max='10' step='1')
+          +btn('Добавить в корзину', '')
+      section.product__similar
+        h3 Эти товары могут вам понравиться:
+        +item('Одгер', '5000', 'single-product.html', 'odger.jpg', 'Стул, белый, бежевый', 'Удобно сидеть благодаря эргономичной форме сиденья и закругленной форме спинки.')
+        +item('Свен-Бертиль', '3400', 'single-product.html', 'sven-bertil.jpg', 'Стул, черный', 'Эргономичная форма спинки и сиденья обеспечивает оптимальный комфорт.')
+
+

@@ -1,0 +1,90 @@
+.page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  background-color: $black;
+
+  &__logo-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+    
+    a {
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: $white;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+
+    @media (min-width: $screen-sm) {
+      width: 33.3%;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 20%;
+    }
+
+    li {
+      line-height: 39px;
+    }
+
+    a {
+      padding: 11px 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    width: 100%;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+      width: 35%;
+    }
+  }
+
+  &__soc-icon {
+    display: block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 55px;
+    height: 55px;
+    background: url('../img/soc-icons.png') no-repeat 0 50% $darkest-grey;
+    background-size: 140px auto;
+    border: 10px solid $darkest-grey;
+    border-radius: 50%;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &--gp {
+      background-position: -35px 50%;
+    }
+
+    &--tw {
+      background-position: -70px 50%;
+    }
+
+    &--in {
+      background-position: -105px 50%;
+    }
+  }
+
+  &__copyright {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 12px;
+    color: $grey;
+  }
+}

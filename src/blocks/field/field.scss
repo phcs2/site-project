@@ -1,0 +1,37 @@
+$line-height:                 1.5 !default;
+
+input.field {
+  vertical-align: middle;
+  width: 100%;
+  line-height: $line-height;
+  margin-top: 10px;
+  padding: 11px 30px 11px 20px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  color: $grey;
+  border: 1px solid $lighter-grey;
+  border-radius: 0;
+  appearance: none;
+  background-color: $lighter-grey;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $white;
+    border: 1px solid $color-main;
+    outline: none;
+  }
+
+  &--white input{
+    background-color: $white;
+  }
+}
+
+label.field {
+  font-weight: bold;
+}
+

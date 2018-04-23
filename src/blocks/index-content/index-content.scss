@@ -1,0 +1,147 @@
+.index-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__slider {
+    padding: 30px;
+    width: 100%;
+    height: 500px;
+    color: $white;
+    background: url("../img/slider1.jpg") no-repeat 50% 30%;
+    background-size: cover;
+
+    * {
+      margin: 0;
+      color: $white;
+    }
+
+    h1 a,
+    div {
+      font-size: 32px;
+      line-height: 1.35;
+
+      @media(min-width: $screen-md) {
+        font-size: 60px;
+      }
+    }
+
+    p {
+      margin: 20px 0 0;
+      width: 40%;
+      font-size: 16px;
+      line-height: 1.5;
+
+      @media(min-width: $screen-md) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__products-wrapper {
+    @include col(xs, 12, 12, 0);
+    @include col(md, 8, 12, 0);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+.index-content__product {
+  @include col(xs, 12, 12, 0);
+  @include col(md, 6, 12, 0);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: url("../img/1.jpg") no-repeat 50% 0;
+  background-size: cover;
+
+  @media(min-width: $screen-md) {
+    background-position: 50% 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s;
+  }
+
+  &:nth-of-type(2) {
+    background: url("../img/2.jpg") no-repeat;
+    background-size: cover;
+
+    @media(min-width: $screen-md) {
+      background-position: 30% 50%;
+    }
+  }
+  &:nth-of-type(3) {
+    @include col(md, 12, 12, 0);
+    background: url("../img/3.jpg") no-repeat 50% 65%;
+    background-size: cover;
+
+  }
+
+  &--last {
+    @include col(md, 4, 12, 0);
+    background: url("../img/4.jpg") no-repeat 100% 0;
+    background-size: cover;
+
+    @media(min-width: $screen-md) {
+      background-position: 70% 50%;
+      height: 600px;
+    }
+  }
+
+  h2 {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-size: 32px;
+    color: $white;
+  }
+
+  h4 {
+    font-size: 32px;
+    color: $white;
+  }
+
+  span {
+    margin-left: 5px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  div {
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+  }
+
+  h4,
+  p {
+    margin: 0;
+    color: $white;
+    transform: translateY(100px);
+    transition: transform 0.5s;
+  }
+
+  &:hover::before {
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+  &:hover h2 {
+    display: none;
+  }
+
+  &:hover h4,
+  &:hover p {
+    transform: translateY(0px);
+  }
+}
+

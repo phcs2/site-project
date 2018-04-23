@@ -1,0 +1,28 @@
+mixin field(name, placeholder, id, labelName, mods)
+
+  //- name - ОБЯЗАТЕЛЬНОЕ поле
+  //- placeholder - ОБЯЗАТЕЛЬНОЕ поле
+  //- id - если есть, то при клике на label фокус на поле
+  //- labelName - если есть, то добавляется label
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' field--' + modsList[i].trim();
+      }
+    }
+
+
+  if (typeof(labelName) !== 'undefined' && labelName)
+    if (typeof(id) !== 'undefined' && id)
+      label.field(for= id class=allMods)&attributes(attributes)!= labelName
+      input.field(id= id name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+    else
+      label.field!= labelName
+      input.field(name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+  else
+    input.field(name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+

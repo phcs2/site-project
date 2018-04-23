@@ -1,0 +1,15 @@
+mixin icon-btn(name, icon, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' icon-btn--' + modsList[i].trim();
+      }
+    }
+
+  button.icon-btn(name= name)
+    svg(width='20' height='20')
+          use(xlink:href="img/sprite-svg.svg#" + icon)
