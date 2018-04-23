@@ -28,7 +28,6 @@ html(class='no-js  page', lang='ru')
 
     block head
       link(rel='stylesheet', href='css/style.min.css')
-      //-link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,700")
       link(href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700" rel="stylesheet")
       //- script.
       //-   document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -38,14 +37,13 @@ html(class='no-js  page', lang='ru')
   body
     //-noscript У вас отключен JavaScript. Это пугает.
 
-    .page__inner
-      .page__content
-        block header
-          p «шапка»
-        block content
-          p Контент
-        block footer
-          p «подвал»
+    .page__content
+      block header
+        p «шапка»
+      block content
+        p Контент
+      block footer
+        p «подвал»
 
     block page-bottom
       script(src='js/script.min.js')
