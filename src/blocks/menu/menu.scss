@@ -221,13 +221,21 @@
 
 .menu__cart-bottom {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   margin: 20px;
 
   h4 {
-  flex-basis: 50%;
-  margin: 0;
+  flex-basis: 100%;
+  margin-top: 0;
+  margin-bottom: 20px;
   font-size: 22px;
   font-weight: bold;
+
+  @media(min-width: $screen-sm) {
+    flex-basis: 50%;
+    margin-bottom: 0;
+  }
   }
 
   h4 span {
@@ -235,7 +243,12 @@
   }
 
   .btn {
-    flex-basis: 50%;
+    flex-basis: 100%;
+    margin-bottom: 0;
+
+    @media(min-width: $screen-sm) {
+      flex-basis: 50%;
+    }
   }
 }
 
