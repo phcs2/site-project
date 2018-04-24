@@ -85,28 +85,29 @@ mixin product-list()
         +pagination-item('2', '#')
         +pagination-item('3', '#')
     aside.product-list__sidebar
-      section.product-list__sidebar-section
-        h4 Категории
-        a(href='#') Стулья
-          span 28
-        a(href='#') Столы
-          span 46
-        a(href='#') Диваны
-          span 32
-        a(href='#') Стенки
-          span 24
-      section.product-list__sidebar-section
-        h4 Цвет
-        a.product-list__sidebar-color(href='#') Коричневый
-          span 25
-        a.product-list__sidebar-color(href='#') Серый
-          span 7
-        a.product-list__sidebar-color(href='#') Белый
-          span 1
-        a.product-list__sidebar-color(href='#') Черный
-          span 4
+      .product-list__sidebar-inner
+        section.product-list__sidebar-section
+          h4 Категории
+          a(href='#') Стулья
+            span 28
+          a(href='#') Столы
+            span 46
+          a(href='#') Диваны
+            span 32
+          a(href='#') Стенки
+            span 24
+        section.product-list__sidebar-section
+          h4 Цвет
+          a.product-list__sidebar-color(href='#') Коричневый
+            span 25
+          a.product-list__sidebar-color(href='#') Серый
+            span 7
+          a.product-list__sidebar-color(href='#') Белый
+            span 1
+          a.product-list__sidebar-color(href='#') Черный
+            span 4
+      .product-list__sidebar-btn
+        svg(width='16' height='16')
+          use(xlink:href="img/sprite-svg.svg#filter")
+        | Filter
     .product-list__sidebar-bgr
-    .product-list__sidebar-btn
-      svg(width='16' height='16')
-        use(xlink:href="img/sprite-svg.svg#filter")
-      | Filter

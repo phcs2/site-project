@@ -152,8 +152,6 @@ body.js-filter-open {
   top: 0;
   left: 0;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   z-index: 3;
   min-width: 300px;
   width: 300px;
@@ -169,6 +167,15 @@ body.js-filter-open {
 
   &.js-filter-open {
     transform: translateX(0px);
+  }
+}
+
+.product-list__sidebar-inner {
+  overflow: auto;
+  height: 100vh;
+
+  @media (min-width: $screen-lg) {
+    height: 100%;
   }
 }
 
@@ -246,9 +253,9 @@ a.product-list__sidebar-color {
 }
 
 .product-list__sidebar-btn {
-  position: fixed;
+  position: absolute;
   top: calc(50% + 60px);
-  left: 0;
+  left: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,15 +269,10 @@ a.product-list__sidebar-color {
   background-color: $color-main;
   transform-origin: 0 0;
   transform: rotate(-90deg);
-  transition: transform 0.7s;
   cursor: pointer;
 
   @media (min-width: $screen-lg) {
     display: none;
-  }
-
-  .product-list__sidebar.js-filter-open ~ & {
-    transform: translateX(300px) rotate(-90deg);
   }
 
   svg {
