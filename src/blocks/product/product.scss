@@ -91,6 +91,7 @@ $grid-gutter-width:           24px;
   .product__add {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 
     input {
       margin-right: 10px;
@@ -103,6 +104,18 @@ $grid-gutter-width:           24px;
       color: $grey;
       border: 0;
       border-bottom: solid 2px $light-grey;
+    }
+
+    .btn {
+      margin-top: 20px;
+      //width: 100%;
+      flex-basis: 100%;
+
+      @media(min-width: $screen-sm) {
+        //width: auto;
+        flex-basis: auto;
+        margin-top: 0;
+      }
     }
   }
 
