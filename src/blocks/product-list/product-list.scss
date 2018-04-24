@@ -68,6 +68,16 @@ body.js-filter-open {
     }
   }
 
+  label[for="tiles-view"],
+  label[for="table-view"] {
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
 .product-list__filters-text {
   flex-basis: 100%;
   order: 1;
@@ -82,16 +92,6 @@ body.js-filter-open {
     order: 0;
     margin: 0;
     text-align: center;
-  }
-}
-
-  label[for="tiles-view"],
-  label[for="table-view"] {
-    padding: 5px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    cursor: pointer;
   }
 }
 
