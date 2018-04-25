@@ -108,12 +108,10 @@ $grid-gutter-width:           24px;
 
     .btn {
       margin-top: 20px;
-      //width: 100%;
       flex-basis: 100%;
 
       @media(min-width: $screen-sm) {
-        //width: auto;
-        flex-basis: auto;
+        flex: none;
         margin-top: 0;
       }
     }
