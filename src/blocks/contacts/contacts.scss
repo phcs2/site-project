@@ -9,6 +9,7 @@ $grid-gutter-width:           24px;
 .contacts {
   &__top {
     @include container();
+    margin-bottom: 50px;
   }
 
   &__text {
@@ -42,13 +43,13 @@ $grid-gutter-width:           24px;
 
   &__form {
     @include row(24, 24, 0, 0, 0, 0);
+    align-items: baseline;
     margin-bottom: 20px;
     font-size: 14px;
 
     label {
       @include col(xs, 1, 1, 0);
-      @include col(md, 1, 8, 24);
-      margin-top: 22px;
+      @include col(md, 1, 7, 24);
     }
 
     label span {
@@ -59,8 +60,9 @@ $grid-gutter-width:           24px;
     input,
     textarea {
       @include col();
-      @include col(md, 7, 8);
-      margin-bottom: 15px;
+      @include col(md, 6, 7);
+      margin-top: 10px;
+      margin-bottom: 25px;
     }
 
     textarea {
@@ -68,7 +70,7 @@ $grid-gutter-width:           24px;
     }
 
     .btn {
-      flex-basis: 0;
+      flex: none;
       margin: 10px auto 40px;
     }
   }
