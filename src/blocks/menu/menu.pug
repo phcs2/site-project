@@ -2,41 +2,41 @@ mixin menu
   nav.menu
     .menu__icon
       svg(width='20' height='20')
-        use(xlink:href="img/sprite-svg.svg#menu")
+        use(xlink:href='img/sprite-svg.svg#menu')
     .menu__items
-      a.menu__item(href="index.html") Главная
-      a.menu__item(href="catalogue.html") Каталог
-      a.menu__item(href="#") Блог
-      a.menu__item(href="#") Галерея
-      a.menu__item(href="contacts.html") Контакты
+      a.menu__item(href='index.html') Главная
+      a.menu__item(href='catalogue.html') Каталог
+      a.menu__item(href='#') Блог
+      a.menu__item(href='#') Галерея
+      a.menu__item(href='contacts.html') Контакты
     .menu__icon
       svg(width='20' height='20')
-        use(xlink:href="img/sprite-svg.svg#search")
+        use(xlink:href='img/sprite-svg.svg#search')
     form.menu__search
-      input(placeholder="Введите вопрос...")
-      button(name="search-close" type="button")
+      input(placeholder='Введите вопрос...')
+      button(name='search-close' type='button')
         svg(width='20' height='20')
-          use(xlink:href="img/sprite-svg.svg#close")
+          use(xlink:href='img/sprite-svg.svg#close')
     .menu__icon
       svg(width='20' height='20')
-        use(xlink:href="img/sprite-svg.svg#cart")
+        use(xlink:href='img/sprite-svg.svg#cart')
     .menu__cart
       .menu__cart-item
-        a(href="#")
-          img(src="img/tobias.jpg")
+        a(href='#')
+          img(src='img/tobias.jpg' alt='Фото товара')
         .menu__cart-item-desc
-          a(href="#") Тобиас
+          a(href='#') Тобиас
           span 2 x 4800 ₽
-          input(value="2")
+          input(value='2')
         +icon-btn('cart-edit', 'edit')
         +icon-btn('cart-delete', 'trash')
       .menu__cart-item
-        a(href="#")
-          img(src="img/kullaberg.jpg")
+        a(href='#')
+          img(src='img/kullaberg.jpg' alt='Фото товара')
         .menu__cart-item-desc
-          a(href="#") Куллаберг
+          a(href='#') Куллаберг
           span 2 x 4000 ₽
-          input(value="2")
+          input(value='2')
         +icon-btn('cart-edit', 'edit')
         +icon-btn('cart-delete', 'trash')
       .menu__cart-bottom

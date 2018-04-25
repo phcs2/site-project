@@ -1,4 +1,4 @@
-mixin item(title, price, href, img, summary, desc, mods)
+mixin item(title, price, href, img, alt, summary, desc, mods)
 
   //- title {string} - название
   //- price {string} - цена
@@ -18,7 +18,7 @@ mixin item(title, price, href, img, summary, desc, mods)
 
   .item(class=allMods)
     a(href= href)
-      img(src='img/' + img)
+      img(src='img/' + img alt=alt)
     .item__inner
       h4.item__title
         a(href= href)= title

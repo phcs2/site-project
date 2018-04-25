@@ -13,7 +13,7 @@ mixin cart()
       .cart__product
         +icon-btn('icon-delete', 'trash')
         a.cart__product-link(href='single-product.html')
-          img(src='img/tobias.jpg')
+          img(src='img/tobias.jpg' alt='Фото товара')
         .cart__product-desc
           h4.cart__product-desc-header
             a(href='single-product.html') Тобиас
@@ -26,7 +26,7 @@ mixin cart()
       .cart__product
         +icon-btn('icon-delete', 'trash')
         a.cart__product-link(href='single-product.html')
-          img(src='img/kullaberg.jpg')
+          img(src='img/kullaberg.jpg' alt='Фото товара')
         .cart__product-desc
           h4.cart__product-desc-header
             a(href='single-product.html') Куллаберг
@@ -36,10 +36,10 @@ mixin cart()
         .cart__product-quantity
           input(type='number' value='2' min='1' max='10' step='1')
         .cart__product-total 8000 ₽
-    section.cart__total
+    .cart__total
       p.cart__total-text Итого:
         span 17600 ₽
       +btn('Перейти к оформлению', '', 'color2')
-    section.cart__coupone
-      +field('coupone', 'Coupone code:', 'Code')
+    .cart__coupone
+      +field('coupone', 'Coupone code', 'Code')
       +btn('Apply', '', 'small')
