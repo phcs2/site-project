@@ -21,10 +21,10 @@ mixin field-textarea(name, placeholder, id, labelName, mods)
   if (typeof(labelName) !== 'undefined' && labelName)
     if (typeof(id) !== 'undefined' && id)
       label.field-textarea(for= id class=allMods)&attributes(attributes)!= labelName
-      textarea.field-textarea(id= id name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+      textarea.field-textarea(id= id name= name placeholder= placeholder class=allMods)&attributes(attributes)
     else
       label.field-textarea!= labelName
-      textarea.field-textarea(name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+      textarea.field-textarea(name= name placeholder= placeholder class=allMods)&attributes(attributes)
   else
-    textarea.field-textarea(name= name type='text' placeholder= placeholder class=allMods)&attributes(attributes)
+    textarea.field-textarea(name= name placeholder= placeholder class=allMods)&attributes(attributes)
 
