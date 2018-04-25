@@ -6,15 +6,15 @@ mixin index-content()
       div 4800 ₽
       p Эргономичная форма сиденья и спинки обеспечивает максимальный комфорт.
     .index-content__products-wrapper
-      +index-content-product('Стулья', 28, 9500)
-      +index-content-product('Столы', 46, 17200)
-      +index-content-product('Диваны', 32, 35500)
-    +index-content-product('Стенки', 24, 44800, 'last')
+      +index-content-product('Стулья', 'catalogue.html', 28, 9500)
+      +index-content-product('Столы', 'catalogue.html', 46, 17200)
+      +index-content-product('Диваны', 'catalogue.html', 32, 35500)
+    +index-content-product('Стенки', 'catalogue.html', 24, 44800, 'last')
 
 
-mixin index-content-product(name, count, price, mod)
+mixin index-content-product(name, href, count, price, mod)
   -var mod = (typeof(mod) === 'undefined') ? '' : 'index-content__product--' + mod;
-  a.index-content__product(class=mod href="#")
+  a.index-content__product(class=mod href=href)
         h2= name
         div
           h4= name
