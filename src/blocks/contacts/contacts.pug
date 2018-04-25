@@ -9,13 +9,13 @@ mixin contacts()
       p.contacts__text Телефон: +7 495 234-56-78, 234-56-79
       p.contacts__text Работаем каждый день с 10 до 18
       p.contacts__text E-mail: 
-        a(href="#") info@justshopmail.com
+        a(href='#') info@justshopmail.com
     .contacts__map#map
     section.contacts__bottom
       h4.contacts__bottom-header Свяжитесь с нами
       p.contacts__bottom-text Ваш адрес эл. почты не будет опубликован. Обязательные поля отмечены
         span *
-      form.contacts__form(action='')
+      form.contacts__form
         +field('name', 'Ваше имя', '', 'Имя:<span>*</span>')
         +field('email', 'example@domain.com', '', 'Эл. почта:<span>*</span>')
         +field-textarea('message', 'Ваше сообщение', '', 'Сообщение:<span>*</span>')
